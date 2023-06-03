@@ -1,0 +1,21 @@
+---
+- name: my lops playbook
+  hosts: webservers
+  become: true
+  user: ansible
+  connection: ssh
+
+
+  tasks:
+   - name: creating a fiel with ansible playbook
+     file: path=/tmp/omhari state=file
+
+
+   - name: creating a directory with ansible playbook
+     file: path=/tmp/imfolder state=directory
+
+
+   - name: copying a file to hosts
+     copy: src=./pmfile dest=/home/ansible
+                                                
+

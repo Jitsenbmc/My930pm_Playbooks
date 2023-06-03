@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+
+
+  tasks:
+   - name: installing a s/w
+     yum:
+      name: java
+      state: latest

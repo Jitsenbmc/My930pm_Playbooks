@@ -1,0 +1,17 @@
+--- 
+- name: my test playbook
+  hosts: all
+  become: true
+  connection: ssh
+
+
+  tasks:
+   - name:  installing pkg
+     yum:
+       name: httpd
+       state: absent
+
+   - name: start the service
+     service: 
+        name: httpd
+        state: stopped

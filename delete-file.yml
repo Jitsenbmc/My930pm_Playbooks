@@ -1,0 +1,13 @@
+--- #copying a file
+- hosts: all
+  become: yes
+  user: ansible
+  connection: ssh
+
+
+  tasks:
+    - name: install package into host
+      yum:
+        name: docker
+        state: present
+      

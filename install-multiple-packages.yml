@@ -1,0 +1,15 @@
+---
+- name: my lops playbook
+  hosts: webservers
+  become: true
+  user: ansible
+  connection: ssh
+
+
+  tasks:
+   - name: install packages
+     yum:
+       name: ['git' ,' which', 'mysql', 'tree', 'wget', 'httpd', 'java']
+       state: installed
+
+
